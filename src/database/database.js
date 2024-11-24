@@ -9,6 +9,13 @@ const sequelize = new Sequelize(
         host: process.env.DB_HOST, // Host (servidor)
         dialect: process.env.DB_DIALECT, // Dialecto (ej. 'postgres', 'mysql', etc.)
         logging: console.log, // Registro de logs
+
+        dialectOptions: {
+            ssl: {
+                require: true,
+                rejectUnauthorized: false,
+            }
+        }
     }
 );
 
