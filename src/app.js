@@ -11,9 +11,9 @@ import carrerasRoutes from './routes/carreras.routes.js';
 
 const app = express();
 
-// Configurar CORS
+// Configurar CORS origin: process.env.NODE_ENV === 'development' ? '*' : 'http://localhost:8080',
 const corsOptions = {
-    origin: process.env.NODE_ENV === 'development' ? '*' : 'http://localhost:8080',
+    origin: 'http://localhost:8383',
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     allowedHeaders: ['Content-Type', 'Authorization'],
 };
